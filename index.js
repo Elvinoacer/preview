@@ -23,17 +23,8 @@ io.on("connection", async (socket) => {
       io.to(data.room).emit("user-disconnected", data.user);
     });
   });
-  socket.on("send_message", (message, room) => {
-    // fetch("http://localhost:3000/api/universities/chats/", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(message),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => console.log(data));
-
+  socket.on("send_message", (message, room, cb) => {
+    cb();
     socket.broadcast.to(room).emit("recieve_message", message);
   });
 });
