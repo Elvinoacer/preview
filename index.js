@@ -24,15 +24,15 @@ io.on("connection", async (socket) => {
     });
   });
   socket.on("send_message", (message, room) => {
-    fetch("http://localhost:3000/api/universities/chats/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(message),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+    // fetch("http://localhost:3000/api/universities/chats/", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(message),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => console.log(data));
 
     socket.broadcast.to(room).emit("recieve_message", message);
   });
