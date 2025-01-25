@@ -3,7 +3,7 @@ import { Server } from "socket.io";
 const io = new Server(3001, {
   cors: {
     origin: "http://localhost:3000",
-    origin: "https://classmind-df0ea033e-elvinoacers-projects.vercel.app",
+    origin: "https://classmind-rouge.vercel.app",
     methods: ["GET", "POST"],
   },
 });
