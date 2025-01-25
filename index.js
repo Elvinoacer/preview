@@ -35,8 +35,5 @@ io.on("connection", async (socket) => {
       .then((data) => console.log(data));
 
     socket.broadcast.to(room).emit("recieve_message", message);
-  
   });
-
-
 });
